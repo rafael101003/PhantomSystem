@@ -1,0 +1,95 @@
+/* Importações */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap');
+
+/* Variáveis */
+:root {
+    /* Fontes */
+    --font-h: "Audiowide", sans-serif;
+    --font-p: "Orbitron", sans-serif;
+    
+    /* Cores dos Textos */
+    --color-h: #d3d3ff;
+    --color-p: #8182b4;
+}
+
+/*================================
+    Seção 1  Base da Página
+==================================*/
+
+/* Reset global*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  background-size: cover;        /* Força a imagem a cobrir toda a tela sem distorcer */
+  background-position: center;   /* Centraliza o fundo */
+  background-repeat: no-repeat;  /* Impede que a imagem fique se repetindo */
+  min-height: 100vh;             /* Garante que o container tenha a altura da tela inteira */
+}
+
+
+body {
+  background-color: #101027;
+}
+
+/* JUNTAMOS AS DUAS DECLARAÇÕES DO .APP EM UMA SÓ */
+.App {
+  display: flex;
+  flex-direction: column;   /* Empilha os elementos */
+  align-items: center;       /* Centraliza na horizontal */
+  justify-content: center;   /* Centraliza na vertical */
+  text-align: center;        /* Centraliza as linhas de texto */
+  min-height: 100vh;         /* Ocupa a tela inteira */                /* Cria um espaço perfeito de 2rem entre a logo, o h1 e o p */
+  padding: 20px;             /* Garante que o texto não cole nas bordas em celulares */
+}
+
+/*=======================================
+  Seção 2 Elementos funcionais da página
+=========================================*/
+
+.logo {
+  width: 250px;       
+  height: 250px;      
+  object-fit: contain; /* Garante que o PNG se ajuste ao espaço sem distorcer */
+  filter: drop-shadow(0 0 10px rgba(129, 130, 180, 0.4)); /* Sombra leve com a cor do seu parágrafo */
+}
+
+/* Aplicando as fontes, pesos e cores nos seletores corretos */
+h1, h2 {
+  font-family: var(--font-h);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem; /* Dica: 5rem é bem grande! Se sumir no celular, podemos ajustar depois */
+  color: var(--color-h);
+}
+
+/* Estiliza o elemento "p"*/
+.p-principal {
+  font-family: var(--font-p);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: var(--color-p);
+  line-height: 2;
+}
+
+/*=======================================
+  Seção 3 Footer area de contatos e inf
+=========================================*/
+
+.footer {
+  padding: 20px;
+  background-color: #101027;
+}
+
+.contatos {
+  font-family: var(--font-p);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: var(--color-p);
+  line-height: 2;
+}
