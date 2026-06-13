@@ -1,16 +1,22 @@
 import './App.css'
 import logo from './assets/logo.png';
-import background from './assets/background.png'
 
 const loja = {
   name: 'Phantom System',
   logo: logo,
-  background: background,
 };
+
+const servicos = [
+  {title: 'Análise técnica do Hardware', isService: true, id: 1 },
+  {title: 'Limpeza interna e externa', isService: true, id: 2 },
+  {title: 'Backup e Formatação', isService: true, id: 3 },
+  {title: 'Manutenção Preventiva e Corretiva', isService: true, id: 4 },
+  {title: 'Recuperação de arquivos', isService: true, id: 5 },
+];
 
 function App() {
   return (
-    <div className='background' style={{ backgroundImage: `url(${background})`}}>
+    <div>
       <div className='App'>
       
         {/* Renderiza logo da loja */}
@@ -26,14 +32,19 @@ function App() {
       {/* Carrega a seção principal de elementos da loja */}
       <main>
         <div className='container1'>
+
+          {/* Lista de Serviços */}
           <h2>Serviços Disponíveis</h2>
-          <ul>
-            <li><p>Análise técnica do Hardware</p></li>
-            <li><p>Limpeza interna e externa</p></li>
-            <li><p>Backup e Formatação</p></li>
-            <li><p>Manutenção Preventiva e Corretiva</p></li>
-            <li><p>Recuperação de arquivos</p></li>
-          </ul>
+
+          {servicos.map(services =>
+            <ul>
+              <li
+              className='list1'
+              key={services.id}
+              style={{color: services.isService? '#8182b4' : 'darkgreen'}}>{services.title}</li>
+            </ul>
+          )}
+
         </div>
       </main>
 
@@ -46,6 +57,8 @@ function App() {
           e-mail: rafael.avare3000@gmail.com
         </p>
       </footer>
+
+
     </div>
   )
 }

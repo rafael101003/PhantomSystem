@@ -12,7 +12,7 @@
     --color-p: #8182b4;
 
     /* Cores backgrounds */
-    --color-bg-1: #101027;
+    --color-bg: #04041a;
     --color-container-1: #101027;
 }
 
@@ -37,7 +37,7 @@
 
 
 body {
-  background-color: #101027;
+  background-color: var(--color-bg);
 }
 
 /* JUNTAMOS AS DUAS DECLARAÇÕES DO .APP EM UMA SÓ */
@@ -109,11 +109,26 @@ h2 {
   background-color: var(--color-container-1);
   color: var(--color-p);
   font-family: var(--font-p);
-  gap: 10px;
+  gap: 5px;
 }
 
 .container1 li {
   margin-left: 1rem;
+}
+
+li {
+  list-style: none;
+  padding: 10px 15px; /* Espaço interno para o item não ficar espremido */
+  border: 1px solid transparent; /* Borda invisível para evitar que o layout "pule" no hover */
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  font-weight: 500;
+  transform: translateY(-5px);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
 }
 
 /*=======================================
