@@ -22,6 +22,21 @@ function App() {
           Nós temos a solução!
         </p>
       </div>
+
+      {/* Carrega a seção principal de elementos da loja */}
+      <main>
+        <div className='container1'>
+          <h2>Serviços Disponíveis</h2>
+          <ul>
+            <li><p>Análise técnica do Hardware</p></li>
+            <li><p>Limpeza interna e externa</p></li>
+            <li><p>Backup e Formatação</p></li>
+            <li><p>Manutenção Preventiva e Corretiva</p></li>
+            <li><p>Recuperação de arquivos</p></li>
+          </ul>
+        </div>
+      </main>
+
       <footer className='footer'>
         <p className='contatos'>
           contatos
