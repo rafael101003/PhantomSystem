@@ -1,64 +1,74 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './assets/logo.png';
+import Container from './containments/container';
+import ContainerServicos from './containments/container-servicos'
+import { Instagram, Whatsapp } from 'react-bootstrap-icons';
 
 const loja = {
-  name: 'Phantom System',
+  nome: 'Phantom System',
   logo: logo,
+  contato: '14 99889-2226'
 };
 
-const servicos = [
-  {title: 'Análise técnica do Hardware', isService: true, id: 1 },
-  {title: 'Limpeza interna e externa', isService: true, id: 2 },
-  {title: 'Backup e Formatação', isService: true, id: 3 },
-  {title: 'Manutenção Preventiva e Corretiva', isService: true, id: 4 },
-  {title: 'Recuperação de arquivos', isService: true, id: 5 },
-];
-
 function App() {
+
+  const mostrarNumero = () => {
+    alert("O número da " + loja.nome + " é " + loja.contato);
+  };
+
   return (
     <div>
-      <div className='App'>
-      
-        {/* Renderiza logo da loja */}
-        <img src={loja.logo} alt={`Logo da loja ${loja.name}`} className="logo"/>
+      {/* Menu de navegação da página */}
+      <nav>
 
-        <h1>Phantom System</h1>
+        {/* Nome da Loja */}
+        <span className="nomeLoja">{loja.nome}</span>
+
+        {/* Ícones das Redes Sociais */}
+        <div>
+          <a href="https://www.instagram.com/" className='link'>
+            <Instagram size={30} className='icon' color='#8182b4' />
+          </a>
+        </div>
+        <div>
+          <Whatsapp size={30} className='icon' color='#8182b4' onClick={mostrarNumero} style={{ cursor: 'pointer' }} />
+        </div>
+
+      </nav>
+
+      <div className='App'>
+        {/* 2. CORREÇÃO: Alterado de loja.name para loja.nome */}
+        <img src={loja.logo} alt={`Logo da loja ${loja.nome}`} className="logo" />
+
+        {/* 3. CORREÇÃO: Alterado de loja.name para loja.nome */}
+        <h1 className='nome-da-loja'>{loja.nome}</h1>
+        
         <p className='p-principal'>
-          Seu computador está com problemas?<br/>
+          Seu computador está com problemas?<br />
           Nós temos a solução!
         </p>
       </div>
 
-      {/* Carrega a seção principal de elementos da loja */}
-      <main>
-        <div className='container1'>
+      {/* Seção principal */}
+      <main className='conteudo-principal'>
+        {/* Lista de serviços */}
+        <section>
+          <Container />
+          <ContainerServicos />
+        </section>
 
-          {/* Lista de Serviços */}
-          <h2>Serviços Disponíveis</h2>
-
-          {servicos.map(services =>
-            <ul>
-              <li
-              className='list1'
-              key={services.id}
-              style={{color: services.isService? '#8182b4' : 'darkgreen'}}>{services.title}</li>
-            </ul>
-          )}
-
-        </div>
       </main>
 
       <footer className='footer'>
         <p className='contatos'>
           contatos
-          <br/>
+          <br />
           whatsapp: 14 99889-2226
           <br />
           e-mail: rafael.avare3000@gmail.com
         </p>
       </footer>
-
-
     </div>
   )
 }

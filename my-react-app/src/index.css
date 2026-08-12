@@ -1,47 +1,54 @@
 /* Importações */
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+/* Iporta o Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 /* Variáveis */
 :root {
-    /* Fontes */
+    /* Fontes dos textos*/
     --font-h: "Audiowide", sans-serif;
     --font-p: "Orbitron", sans-serif;
+    --font-nav: "Space Grotesk", sans-serif;
     
-    /* Cores dos Textos */
+    /* Cores dos Textos Principais*/
     --color-h: #d3d3ff;
     --color-p: #8182b4;
 
     /* Cores backgrounds */
     --color-bg: #04041a;
+    --color-bg-2: #101027;
     --color-container-1: #101027;
 }
 
 /*================================
-    Seção 1  Base da Página
+    Base da Página
 ==================================*/
 
-/* Reset global*/
+/* Reset global */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.background {
-  background-attachment: fixed;  /* Cria efeito paralax com background */
-  background-size: cover;        /* Força a imagem a cobrir toda a tela sem distorcer */
-  background-position: center;   /* Centraliza o fundo */
-  background-repeat: no-repeat;  /* Impede que a imagem fique se repetindo */
-  min-height: 100vh;             /* Garante que o container tenha a altura da tela inteira */
+html {
+  scroll-behavior: smooth; /* Força o navegador a suavizar qualquer rolagem */
 }
 
+html::-webkit-scrollbar {
+  display: none;           /* Esconde a barra no Chrome, Safari e Edge */
+}
 
 body {
+  min-height: 100vh;
   background-color: var(--color-bg);
 }
 
 /* JUNTAMOS AS DUAS DECLARAÇÕES DO .APP EM UMA SÓ */
 .App {
+  background-color: var(--color-bg);
   display: flex;
   flex-direction: column;    /* Empilha os elementos */
   align-items: center;       /* Centraliza na horizontal */
@@ -51,9 +58,77 @@ body {
   padding: 20px;             /* Garante que o texto não cole nas bordas em celulares */
 }
 
+/* Estiliza todos os links com essa classe */
+.link {
+  text-decoration: none;
+}
+
 main {
+  background-color: var(--color-bg);
   display: flex;
   justify-content: center;
+}
+
+/*=======================================
+  Seção 1 Menu de navegação da Página
+=========================================*/
+
+/* Estiliza menu de navegação */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--color-bg-2);
+}
+
+/* Nome da Loja que fica no menu de mavegação */
+.nomeLoja {
+  font-family: var(--font-h);
+  color: var(--color-p);
+  margin-right: auto;
+  padding: 10px;
+}
+
+/* Modulos de navegação, duvidas de orçamento etc... */
+.modulos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Descrição sobre o módulo */
+.descricao {
+  margin-right: 3rem;
+  color: var(--color-p);
+  font-family: var(--font-nav);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  transition: 0.3s ease;
+}
+
+.descricao:hover {
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 5px rgba(211, 211, 255, 0.2));
+  transform: scale(1.2);
+}
+
+/* Ícones de contatos e redes sociais */
+.icon {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  margin: 5px;
+  transition: 0.3s ease;
+  gap: 10px;
+}
+
+.icon:hover {
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 5px rgba(211, 211, 255, 0.2));
+  transform: scale(1.2);
 }
 
 /*=======================================
@@ -61,14 +136,15 @@ main {
 =========================================*/
 
 .logo {
-  width: 250px;       
-  height: 250px;      
+  max-width: 500px;
+  width: auto;       
+  height: auto;     
   object-fit: contain; /* Garante que o PNG se ajuste ao espaço sem distorcer */
   filter: drop-shadow(0 0 10px rgba(129, 130, 180, 0.4)); /* Sombra leve com a cor do seu parágrafo */
 }
 
 /* Aplicando as fontes, pesos e cores nos seletores corretos */
-h1 {
+.nome-da-loja {
   font-family: var(--font-h);
   font-weight: 400;
   font-style: normal;
@@ -98,37 +174,11 @@ h2 {
   Seção 3 Seção principal da Página
 =========================================*/
 
-.container1 {
+.conteudo-principal {
   display: flex;
   flex-direction: column;
-  padding: 5vh;
-  margin-bottom: 5vh;
-  width: auto;
-  height: auto;
-  border-radius: 15px;
-  background-color: var(--color-container-1);
-  color: var(--color-p);
-  font-family: var(--font-p);
-  gap: 5px;
-}
-
-.container1 li {
-  margin-left: 1rem;
-}
-
-li {
-  list-style: none;
-  padding: 10px 15px; /* Espaço interno para o item não ficar espremido */
-  border: 1px solid transparent; /* Borda invisível para evitar que o layout "pule" no hover */
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-li:hover {
-  font-weight: 500;
-  transform: translateY(-5px);
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  cursor: pointer;
+  justify-content: center;
+  align-items: center ;
 }
 
 /*=======================================
