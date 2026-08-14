@@ -1,9 +1,12 @@
 import './App.css'
+import { Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './assets/logo.png';
 import Container from './containments/container';
 import ContainerServicos from './containments/container-servicos'
 import { Instagram, Whatsapp } from 'react-bootstrap-icons';
+
+import Orcamento from './pages/orcamento.jsx'
 
 const loja = {
   nome: 'Phantom System',
@@ -24,6 +27,11 @@ function App() {
 
         {/* Nome da Loja */}
         <span className="nomeLoja">{loja.nome}</span>
+        
+        <Switch>
+          <Route exact path='/Orcamento' Component={Orcamento}></Route>
+        </Switch>
+        
 
         {/* Ícones das Redes Sociais */}
         <div>

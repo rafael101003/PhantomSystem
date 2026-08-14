@@ -46,7 +46,6 @@ body {
   background-color: var(--color-bg);
 }
 
-/* JUNTAMOS AS DUAS DECLARAÇÕES DO .APP EM UMA SÓ */
 .App {
   background-color: var(--color-bg);
   display: flex;
