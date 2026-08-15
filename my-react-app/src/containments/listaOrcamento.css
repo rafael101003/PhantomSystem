@@ -1,0 +1,47 @@
+/* Importações */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+/* Iporta o Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+/* Variáveis */
+:root {
+    /* Fontes dos textos*/
+    --font-h: "Audiowide", sans-serif;
+    --font-p: "Orbitron", sans-serif;
+    --font-nav: "Space Grotesk", sans-serif;
+    
+    /* Cores dos Textos Principais*/
+    --color-h: #d3d3ff;
+    --color-p: #8182b4;
+ 
+    /* Cores backgrounds */
+    --color-bg: #04041a;
+    --color-bg-2: #101027;
+    --color-container-1: #101027;
+    --color-container-hover: #1f1f43;
+}
+
+
+body{
+    background-color: var(--color-bg);
+}
+
+.list-group-item{
+    display:flex;
+    border-style: hidden;
+    background-color: var(--color-container-1);
+    width: 30rem;
+    margin: 10px;
+}
+
+.list-group-item:hover{
+    background-color: var(--color-container-hover);
+}
+
+#totalServico {
+    font-family: var(--font-h);
+    color: var(--color-h);
+}
+
