@@ -1,9 +1,10 @@
-import Container from "../containments/container";
+import ListaOrcamento from "../containments/listaOrcamento"
+
 
 function Orcamento() {
     return(
         <>
-            <Container />
+            <ListaOrcamento />
         </>
     );
 }

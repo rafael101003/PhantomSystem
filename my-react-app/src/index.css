@@ -130,6 +130,11 @@ nav {
   transform: scale(1.2);
 }
 
+#home {
+  display: flex;
+  margin: 10px;
+}
+
 /*=======================================
   Seção 2 Apresentação da Página
 =========================================*/

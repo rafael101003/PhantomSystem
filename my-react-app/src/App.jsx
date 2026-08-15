@@ -3,10 +3,10 @@ import { Routes, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './assets/logo.png';
 import Container from './containments/container';
-import ContainerServicos from './containments/container-servicos'
+
 import { Instagram, Whatsapp } from 'react-bootstrap-icons';
 
-import Orcamento from './pages/orcamento.jsx';
+import Orcamento from './pages/Orcamento.jsx';
 
 const loja = {
   nome: 'Phantom System',
@@ -27,7 +27,6 @@ function Home() {
           {/* Lista de serviços */}
           <section>
             <Container />
-            <ContainerServicos />
           </section>
       </main>
     </>
@@ -46,8 +45,12 @@ function App() {
         {/* Nome da Loja */}
         <span className="nomeLoja">{loja.nome}</span>
 
-        <Link to="/Orcamento" className="btn btn-primary" >
+        <Link to="/Orcamento" id='orcamento' className="btn btn-primary" >
           Orçamento
+        </Link>
+
+        <Link to="/" id='home' className='btn btn-primary'>
+          Home
         </Link>
 
         {/* Ícones das Redes Sociais */}
