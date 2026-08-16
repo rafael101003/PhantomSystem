@@ -5,7 +5,8 @@
     align-items: center;
     border: none;
     background-color: var(--color-container-1);
-    width: 100%;
+    max-width: 300px;
+    min-width: 300px;
     padding: 15px 20px;
     margin-bottom: 8px;
     border-radius: 8px !important;
@@ -16,14 +17,16 @@
 
 .list-group-item:hover {
     background-color: var(--color-container-hover);
-    color: var(--color-h);
+    color: var(--color-p-hover);
 }
 
 /* Estado ativo quando selecionado */
 .list-group-item.active {
     background-color: var(--color-container-hover);
     border-left: 4px solid #8182b4;
-    color: var(--color-h) !important;
+    max-width: 300px;
+    min-width: 300px;
+    color: var(--color-p-hover) !important;
 }
 
 /* Card do Total */
@@ -35,7 +38,7 @@
     padding: 25px;
     border-radius: 15px;
     min-width: 250px;
-    max-width: 100%;
+    max-width: 300px;
     background-color: var(--color-bg-2);
     font-family: var(--font-h);
     color: var(--color-h);

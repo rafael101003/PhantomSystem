@@ -15,11 +15,14 @@
     /* Cores dos Textos Principais*/
     --color-h: #d3d3ff;
     --color-p: #8182b4;
+    --color-p-hover: #d2d2e4;
 
     /* Cores backgrounds */
     --color-bg: #04041a;
     --color-bg-2: #101027;
     --color-container-1: #101027;
+    --color-container-hover: #191941;
+    --color-container-active: #4040b6;
 }
 
 /*================================
@@ -36,6 +39,7 @@
 html, body, #root {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 html {
@@ -49,17 +53,6 @@ html::-webkit-scrollbar {
 body {
   min-height: 100vh;
   background-color: var(--color-bg);
-}
-
-.App {
-  background-color: var(--color-bg);
-  display: flex;
-  flex-direction: column;    /* Empilha os elementos */
-  align-items: center;       /* Centraliza na horizontal */
-  justify-content: center;   /* Centraliza na vertical */
-  text-align: center;        /* Centraliza as linhas de texto */
-  min-height: 100vh;         /* Ocupa a tela inteira */                /* Cria um espaço perfeito de 2rem entre a logo, o h1 e o p */
-  padding: 20px;             /* Garante que o texto não cole nas bordas em celulares */
 }
 
 /* Estiliza todos os links com essa classe */
@@ -188,22 +181,4 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center ;
-}
-
-/*=======================================
-  Seção 4 Footer area de contatos e inf
-=========================================*/
-
-.footer {
-  padding: 20px;
-  background-color: #101027;
-}
-
-.contatos {
-  font-family: var(--font-p);
-  font-weight: 700;
-  font-style: normal;
-  font-size: 1.2rem;
-  color: var(--color-p);
-  line-height: 2;
 }

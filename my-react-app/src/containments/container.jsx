@@ -43,26 +43,23 @@ function Container() {
   //================================================ 
 
   return (
-    <div>
-      <main className='conteudo-principal'>
-        <div className={`container1 fade-in-section ${isVisible ? 'is-visible' : ''}`} ref={container1Ref}>
+      <section 
+        ref={container1Ref} 
+        className={`container1 fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      >
+        <span>
           <h2>Serviços Disponíveis</h2>
-
-          <ul>
-            {/* 2. Ajustado de services para service (singular) */}
-            {servicos.map(service => (
-              <li
-                className='list1'
-                key={service.id}
-                style={{ color: service.isService ? '#8182b4' : 'darkgreen' }}
-              >
-                {service.title}
-              </li>
-            ))}
-          </ul>
-        </div> 
-      </main>      
-    </div>
+          {servicos.map(({ id, title }) => (
+            <container
+              key={id}
+              className="list1"
+            >
+            {title}
+            </container> 
+          
+          ))}       
+        </span>
+    </section>
   );
 }
 

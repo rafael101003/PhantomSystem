@@ -1,11 +1,10 @@
 import './App.css'
 import { Routes, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Instagram, Whatsapp } from 'react-bootstrap-icons';
 import logo from './assets/logo.png';
 import Container from './containments/container';
-
-import { Instagram, Whatsapp } from 'react-bootstrap-icons';
-
+import Footer from './components/footer.jsx';
 import Orcamento from './pages/Orcamento.jsx';
 
 const loja = {
@@ -16,20 +15,17 @@ const loja = {
 
 function Home() {
   return(
-    <>
-      <div className='App'>
-        <img src={loja.logo} alt={`Logo da loja ${loja.nome}`} className="logo" />
-        <h1 className='nome-da-loja'>{loja.nome}</h1>
-        <p className='p-principal'>Seu computador está com problemas?<br />Nós temos a solução!</p>
-      </div>
+    <div className='d-flex flex-column justify-content-center align-items-center text-center gap-3 '>
+      <img src={loja.logo} alt={`Logo da loja ${loja.nome}`} className="logo" />
+      <h1 className='nome-da-loja'>{loja.nome}</h1>
+      <p className='p-principal'>Seu computador está com problemas?<br />Nós temos a solução!</p>
 
-      <main className='conteudo-principal'>
-          {/* Lista de serviços */}
-          <section>
-            <Container />
-          </section>
-      </main>
-    </>
+
+      {/* Lista de serviços */}
+      <section>
+        <Container />
+      </section>
+    </div>
   );
 }
 
@@ -40,7 +36,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className='d-flex flex-column min-vh-100'>
       <nav>
         {/* Nome da Loja */}
         <span className="nomeLoja">{loja.nome}</span>
@@ -75,20 +71,14 @@ function App() {
       </nav>
 
       {/* Gerenciador de rotas*/}
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/Orcamento" element={<Orcamento/>} />
-      </Routes>
+      <main className='flex-grow-1 '>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/Orcamento" element={<Orcamento/>} />
+        </Routes>
+      </main>
 
-      <footer className='footer'>
-        <p className='contatos'>
-          contatos
-          <br />
-          whatsapp: 14 99889-2226
-          <br />
-          e-mail: rafael.avare3000@gmail.com
-        </p>
-      </footer>
+      <Footer />
     </div>
   )
 }

@@ -1,39 +1,36 @@
 .container1 {
   display: flex;
   flex-direction: column;
-  padding: 5vh;
-  margin-bottom: 5vh;
-  width: auto;
-  max-width: 50vh;
-  height: auto;
+  justify-content: center;
+  background-color: var(--color-bg-2);
   border-radius: 15px;
-  background-color: var(--color-container-1);
+  padding: 20px;
+  margin: 20px;
+}
+
+span {
+  display: grid;
+  gap: 10px;
+}
+
+h2 {
+  color: var(--color-p);
+}
+
+.list1 {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
   color: var(--color-p);
   font-family: var(--font-p);
-  gap: 5px;
+  transition: 0.5s ease;
 }
 
-.container1 h2 {
-  text-align: center;
-}
-
-.container1 li {
-  margin-left: 1rem;
-}
-
-li {
-  list-style: none;
-  padding: 10px 15px; /* Espaço interno para o item não ficar espremido */
-  border: 1px solid transparent; /* Borda invisível para evitar que o layout "pule" no hover */
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-li:hover {
-  font-weight: 500;
+.list1:hover{
   transform: translateY(-5px);
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  cursor: pointer;
+  font-weight: bold;
+  text-shadow:  0px 0px 1px white;
 }
 
 /* Estado inicial do container (invisível e levemente abaixo) */
