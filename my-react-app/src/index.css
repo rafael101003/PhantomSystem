@@ -33,6 +33,11 @@
   box-sizing: border-box;
 }
 
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
 html {
   scroll-behavior: smooth; /* Força o navegador a suavizar qualquer rolagem */
 }

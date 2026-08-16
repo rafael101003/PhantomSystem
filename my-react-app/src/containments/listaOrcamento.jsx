@@ -27,31 +27,27 @@ function ListaOrcamento() {
         .reduce((soma, servico) => soma + servico.preco, 0);
 
     return (
-        <div >
-            <ul className="list-group">
+        <div className="row justify-content-center align-items-start g-4 mt-2">
+            <div className="col-12 col-md-7 col-lg-7">
+                <ul className="list-group">
                 {SERVICOS.map(service => {
                     const isSelecionado = selecionado.includes(service.id);
-                    return (
-                        <li 
-                            key={service.id}
-                            onClick={() => handleTroca(service.id)}
-                            className={`list-group-item ${isSelecionado ? 'active' : ''}`}
-                            style={{ cursor: 'pointer', color: '#8182b4'}}
-                        >
+                        return (
+                            <li 
+                                key={service.id}
+                                onClick={() => handleTroca(service.id)}
+                                className={`list-group-item ${isSelecionado ? 'active' : ''}`}
+                                style={{ cursor: 'pointer', color: '#8182b4'}}
+                            >
                             {service.title} - R$ {service.preco.toFixed(2)}
-                        </li>
-                    );
-                })}
-            </ul>
-            <div
-                style={{ display: 'flex', backgroundColor: '#101027', width:'auto', height: '250px', borderRadius: '10px', margin: '10px', padding: '15px', alignItems: 'center', justifyContent: 'center'}}
-            >
-                <h3 id="totalServico" className="mt-3"
-                >
-                Total: R$ {total.toFixed(2)}
-            </h3>
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
-
+            <div id="totalContainer" className="col-12 col-md-4 col-lg-3">
+                    <h3 id="totalServico" className="mt-3"> Total: R$ {total.toFixed(2)}</h3>
+            </div>
         </div>
     );
 }

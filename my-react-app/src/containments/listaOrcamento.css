@@ -1,47 +1,56 @@
-/* Importações */
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap');
-
-/* Iporta o Bootstrap */
-@import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-/* Variáveis */
-:root {
-    /* Fontes dos textos*/
-    --font-h: "Audiowide", sans-serif;
-    --font-p: "Orbitron", sans-serif;
-    --font-nav: "Space Grotesk", sans-serif;
-    
-    /* Cores dos Textos Principais*/
-    --color-h: #d3d3ff;
-    --color-p: #8182b4;
- 
-    /* Cores backgrounds */
-    --color-bg: #04041a;
-    --color-bg-2: #101027;
-    --color-container-1: #101027;
-    --color-container-hover: #1f1f43;
-}
-
-
-body{
-    background-color: var(--color-bg);
-}
-
-.list-group-item{
-    display:flex;
-    border-style: hidden;
+/* Removido o width fixo de 30rem e trocado por 100% para ocupar a coluna */
+.list-group-item {
+    display: flex;
+    justify-content: space-between; /* Espaça o título à esquerda e o preço à direita */
+    align-items: center;
+    border: none;
     background-color: var(--color-container-1);
-    width: 30rem;
-    margin: 10px;
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 8px;
+    border-radius: 8px !important;
+    color: var(--color-p);
+    font-family: var(--font-nav);
+    transition: all 0.2s ease-in-out;
 }
 
-.list-group-item:hover{
+.list-group-item:hover {
     background-color: var(--color-container-hover);
-}
-
-#totalServico {
-    font-family: var(--font-h);
     color: var(--color-h);
 }
 
+/* Estado ativo quando selecionado */
+.list-group-item.active {
+    background-color: var(--color-container-hover);
+    border-left: 4px solid #8182b4;
+    color: var(--color-h) !important;
+}
+
+/* Card do Total */
+#totalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    border-radius: 15px;
+    min-width: 250px;
+    max-width: 100%;
+    background-color: var(--color-bg-2);
+    font-family: var(--font-h);
+    color: var(--color-h);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(129, 130, 180, 0.2);
+}
+
+.total-label {
+    font-size: 0.9rem;
+    color: var(--color-p);
+    margin-bottom: 10px;
+    font-family: var(--font-p);
+}
+
+#totalServico {
+    margin: 0;
+    color: #a5a6e0;
+}
