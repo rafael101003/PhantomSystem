@@ -1,65 +1,17 @@
-import './container.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useRef, useEffect, useState } from 'react';
+import "./container.css"
 
-const servicos = [
-  { title: 'Análise técnica do Hardware', isService: true, id: 1 },
-  { title: 'Limpeza interna e externa', isService: true, id: 2 },
-  { title: 'Backup e Formatação', isService: true, id: 3 },
-  { title: 'Manutenção Preventiva e Corretiva', isService: true, id: 4 },
-  { title: 'Recuperação de arquivos', isService: true, id: 5 },
-];
+function Container({children, titulo}) {
+  return(
+      <div className="container d-flex flex-column mb-4 mt-4 w-100 p-5">
+      
+      {/* Exemplo: Se passar a prop 'titulo', renderiza um cabeçalho fixo */}
+      {titulo && (<h3 className="card-title text-center p-2">{titulo}</h3>)}
 
-// 1. Mudança para Letra Maiúscula (Container)
-function Container() {
-  
-    //================================================
-  // Efeito fade-in para container
-  //==================================================
-  const container1Ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+      <div className="d-flex flex-column gap-3 text-center card-body p-2 ">
+        {children}
+      </div>
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target); // Mantém a animação apenas na primeira vez
-        }
-      },
-      {
-        threshold: 0.1 // Dispara quando 10% do container aparecer
-      }
-    );
-
-    if (container1Ref.current) {
-      observer.observe(container1Ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-  //================================================
-  // Fim do efeito fade-in
-  //================================================ 
-
-  return (
-      <section 
-        ref={container1Ref} 
-        className={`container1 fade-in-section ${isVisible ? 'is-visible' : ''}`}
-      >
-        <span>
-          <h2>Serviços Disponíveis</h2>
-          {servicos.map(({ id, title }) => (
-            <container
-              key={id}
-              className="list1"
-            >
-            {title}
-            </container> 
-          
-          ))}       
-        </span>
-    </section>
+    </div>
   );
 }
 

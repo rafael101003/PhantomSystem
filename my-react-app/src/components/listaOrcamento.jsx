@@ -1,7 +1,7 @@
 import "./listaOrcamento.css";
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import BotaoWhatsApp from "../components/botaoWhatsapp";
+import BotaoWhatsApp from "./botaoWhatsapp";
 
 /* Container de serviços e valores */
 const SERVICOS = [
