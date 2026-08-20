@@ -12,7 +12,7 @@ function BotaoWhatsApp({selecionados = [], total=0}){
         .join('\n');
 
         const mensagemMontada =
-        `*Olá, quero solicitar um orçamento destes serviços\n\n` +
+        `*Olá, quero solicitar um orçamento destes serviços*\n\n` +
         `${itensSelecionados}\n\n` +
         `*Total estimado:* R$ ${total.toFixed(2)}`
 

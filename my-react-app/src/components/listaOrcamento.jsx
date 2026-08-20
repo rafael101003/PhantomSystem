@@ -34,7 +34,7 @@ function ListaOrcamento() {
         <div className="row justify-content-center align-items-start g-4 mt-2">
             
             {/* Coluna da Esquerda: Lista de Serviços */}
-            <div className="col-12 col-md-7 col-lg-7">
+            <div className="col-12 col-md-7 ">
                 <ul className="list-group">
                     {SERVICOS.map(service => {
                         const isSelecionado = selecionado.includes(service.id);
@@ -51,7 +51,7 @@ function ListaOrcamento() {
                     })}
                 </ul>
             </div>
-            <div className="col-12 col-md-5 col-lg-4">
+            <div className="col-12 col-md-5 ">
                 <div id="totalContainer">
                     <h4 className="card-title text-center mb-3">Resumo do Orçamento</h4>
                     <h3 className="text-center text-success fw-bold">Total: R$ {total.toFixed(2)}</h3>

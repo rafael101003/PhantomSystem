@@ -6,6 +6,7 @@ import logo from './assets/logo.png';
 import Container from './containments/container';
 import Footer from './components/footer.jsx';
 import Orcamento from './pages/Orcamento.jsx';
+import Administrador from './pages/administrador.jsx'
 
 // Informações da loja
 const loja = {
@@ -70,6 +71,10 @@ function App() {
           Home
         </Link>
 
+        <Link to="/Administrador" id='Adm' className='btn btn-primary'>
+          Adm
+        </Link>
+
         {/* Ícones das Redes Sociais */}
         <div>
           <a href="https://www.instagram.com/" className='link'>
@@ -95,7 +100,8 @@ function App() {
       <main className='flex-grow-1 '>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/Orcamento" element={<Orcamento/>} />
+          <Route exact path="/Orcamento" element={<Orcamento />} />
+          <Route exact path="/Adm" element={<Administrador />} />
         </Routes>
       </main>
 
