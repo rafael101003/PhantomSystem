@@ -101,7 +101,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/Orcamento" element={<Orcamento />} />
-          <Route exact path="/Adm" element={<Administrador />} />
+          <Route exact path="/Administrador" element={<Administrador />} />
         </Routes>
       </main>
 

@@ -5,7 +5,7 @@
     align-items: center;
     border: none;
     background-color: var(--color-container-1);
-    max-width: 300px;
+    width: 350px;
     min-width: 300px;
     padding: 15px 20px;
     margin-bottom: 8px;
@@ -24,9 +24,11 @@
 .list-group-item.active {
     background-color: var(--color-container-hover);
     border-left: 4px solid #8182b4;
-    max-width: 300px;
+    width: 350px;
     min-width: 300px;
     color: var(--color-p-hover) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(129, 130, 180, 0.2);
 }
 
 /* Card do Total */
