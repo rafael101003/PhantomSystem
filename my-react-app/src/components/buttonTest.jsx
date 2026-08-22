@@ -5,7 +5,7 @@ function Teste(){
     const[data, setData] = useState('')
 
     const buscarMensagem = () => {
-        fetch('http://localhost:3001/api')
+        fetch('http://127.0.0.1:3001/api')
             .then((res) => res.json())
             .then((data) => setData(data.message))
             .catch((erro) => console.error("Erro:", erro));
