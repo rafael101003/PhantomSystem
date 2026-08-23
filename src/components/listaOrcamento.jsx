@@ -1,7 +1,7 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./listaOrcamento.css";
-import BotaoWhatsApp from "./botaoWhatsapp";
+import BotaoWhatsApp from "./BotaoWhatsapp";
 import { Container } from "react-bootstrap";
 
 // Tabela oficial de serviços
