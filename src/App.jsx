@@ -44,9 +44,11 @@ function App() {
       {/* Gerenciador de rotas*/}
       <main className='flex-grow-1 '>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="/" element={<Navigate to="/Home" replace />} />
           <Route exact path="/Home" element={<Home />} />
           <Route exact path="/Orcamento" element={<Orcamento />} />
+
+          <Route path="*" element={<Navigate to="/Home" replace />} />
         </Routes>
       </main>
       <Footer />
