@@ -1,5 +1,5 @@
 // Bibliotecas e Estilos Externos
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link , Navigate} from 'react-router-dom';
 import { Instagram } from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -44,6 +44,7 @@ function App() {
       {/* Gerenciador de rotas*/}
       <main className='flex-grow-1 '>
         <Routes>
+          <Route path="/" element={<Navigate to="/home" replace />} />
           <Route exact path="/Home" element={<Home />} />
           <Route exact path="/Orcamento" element={<Orcamento />} />
         </Routes>
