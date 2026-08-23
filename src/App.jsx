@@ -47,8 +47,7 @@ function App() {
           <Route path="/" element={<Navigate to="/Home" replace />} />
           <Route exact path="/Home" element={<Home />} />
           <Route exact path="/Orcamento" element={<Orcamento />} />
-
-          <Route path="*" element={<Navigate to="/Home" replace />} />
+           <Route path="*" element={<Navigate to="/Home" replace />} />
         </Routes>
       </main>
       <Footer />
