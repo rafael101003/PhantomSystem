@@ -2,38 +2,34 @@ const ddd = "14";
 const parte1 = "99889";
 const parte2 = "2226";
 
-function BotaoWhatsApp({selecionados = [], total=0}){
+function BotaoWhatsApp({ selecionados = [], total = 0 }) {
+  const enviarWhatsApp = () => {
+    if (selecionados.length === 0) {
+      alert("Por favor, selecione ao menos um serviço para continuar.");
+      return;
+    }
 
-    const enviarMensagem = () => {
+    const lista = selecionados
+      .map(item => `• *${item.title}*: R$ ${item.price.toFixed(2)}`)
+      .join('\n');
 
-        if(selecionados.length === 0) return;
+    const mensagem = 
+      `*Solicitação de Orçamento - Phantom System*\n\n` +
+      `*Serviços selecionados:*\n${lista}\n\n` +
+      `*Total estimado:* R$ ${total.toFixed(2)}`;
 
-        const itensSelecionados =
-        selecionados
-        .map (item => `*${item.title}*: R$ ${item.price.toFixed(2)}`)
-        .join('\n');
+    const link = `https://wa.me/55${ddd}${parte1}${parte2}?text=${encodeURIComponent(mensagem)}`;
+    window.open(link, '_blank', 'noopener,noreferrer');
+  };
 
-        const mensagemMontada =
-        `*Olá, quero solicitar um orçamento destes serviços*\n\n` +
-        `${itensSelecionados}\n\n` +
-        `*Total estimado:* R$ ${total.toFixed(2)}`
-
-        const mensagemCodificada = encodeURIComponent(mensagemMontada);
-
-        const whatsapLink = `https://wa.me/55${ddd}${parte1}${parte2}?text=${mensagemCodificada}`;
-
-        window.open(whatsapLink);
-    };
-
-    const semServico = selecionados.length === 0;
-
-    return(
-        <button
-        onClick={enviarMensagem}
-        className={`btn ${semServico ? 'btn-secondary' : 'btn-success'} w-100 mt-3`}>
-            enviarMensagem
-        </button>
-    );
+  return (
+    <button 
+      onClick={enviarWhatsApp}
+      className="btn btn-success btn-lg w-100 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2"
+    >
+      <span>Enviar para o WhatsApp</span>
+    </button>
+  );
 }
 
 export default BotaoWhatsApp;

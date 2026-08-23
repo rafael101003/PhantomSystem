@@ -54,12 +54,6 @@ body {
   min-height: 100vh;
   background-color: var(--color-bg);
 }
-
-/* Estiliza todos os links com essa classe */
-.link {
-  text-decoration: none;
-}
-
 main {
   background-color: var(--color-bg);
   display: flex;
@@ -84,30 +78,6 @@ nav {
   color: var(--color-p);
   margin-right: auto;
   padding: 10px;
-}
-
-/* Modulos de navegação, duvidas de orçamento etc... */
-.modulos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Descrição sobre o módulo */
-.descricao {
-  margin-right: 3rem;
-  color: var(--color-p);
-  font-family: var(--font-nav);
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  transition: 0.3s ease;
-}
-
-.descricao:hover {
-  cursor: pointer;
-  filter: drop-shadow(0px 0px 5px rgba(211, 211, 255, 0.2));
-  transform: scale(1.2);
 }
 
 /* Ícones de contatos e redes sociais */
@@ -145,23 +115,6 @@ nav {
   filter: drop-shadow(0 0 10px rgba(129, 130, 180, 0.4)); /* Sombra leve com a cor do seu parágrafo */
 }
 
-/* Aplicando as fontes, pesos e cores nos seletores corretos */
-.nome-da-loja {
-  font-family: var(--font-h);
-  font-weight: 400;
-  font-style: normal;
-  font-size: 5rem; /* Dica: 5rem é bem grande! Se sumir no celular, podemos ajustar depois */
-  color: var(--color-h);
-}
-
-h2 {
-  font-family: var(--font-h);
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem; /* Dica: 5rem é bem grande! Se sumir no celular, podemos ajustar depois */
-  color: var(--color-h);
-}
-
 /* Estiliza o elemento "p"*/
 .p-principal {
   font-family: var(--font-p);
@@ -170,15 +123,4 @@ h2 {
   font-size: 1.2rem;
   color: var(--color-p);
   line-height: 2;
-}
-
-/*=======================================
-  Seção 3 Seção principal da Página
-=========================================*/
-
-.conteudo-principal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center ;
 }

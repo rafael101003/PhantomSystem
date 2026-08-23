@@ -37,7 +37,7 @@ function Home() {
 
       {/* Lista de serviços */}
       <section>
-        <Container titulo={'Serviços Prestados'}>
+        <Container className="container-home" titulo={'Serviços Prestados'}>
           <ul className='text-center p-3  w-auto'>
             {mostrarListaServicos}
           </ul>
