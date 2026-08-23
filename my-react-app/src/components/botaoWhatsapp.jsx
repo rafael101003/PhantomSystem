@@ -1,10 +1,12 @@
-const telefone = "5514998892226"
+const ddd = "14";
+const parte1 = "99889";
+const parte2 = "2226";
 
 function BotaoWhatsApp({selecionados = [], total=0}){
 
     const enviarMensagem = () => {
 
-        if(selecionados.length === 0) return console.log("opa");
+        if(selecionados.length === 0) return;
 
         const itensSelecionados =
         selecionados
@@ -18,7 +20,7 @@ function BotaoWhatsApp({selecionados = [], total=0}){
 
         const mensagemCodificada = encodeURIComponent(mensagemMontada);
 
-        const whatsapLink = `https://wa.me/${telefone}?text=${mensagemCodificada}`;
+        const whatsapLink = `https://wa.me/55${ddd}${parte1}${parte2}?text=${mensagemCodificada}`;
 
         window.open(whatsapLink);
     };

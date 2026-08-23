@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Páginas
 import Home from './pages/Home.jsx';
 import Orcamento from './pages/Orcamento.jsx';
-import Teste from './components/buttonTest.jsx';
 
 // Componentes
 import Footer from './components/footer.jsx';
@@ -28,7 +27,6 @@ function App() {
 
         <Link to="/Orcamento" id='orcamento' className='btn btn-outline-light'>Orçamento</Link>
         <Link to="/Home" id='home' className='btn btn-outline-light'>Home</Link>
-        <Link to='/Teste' id='teste' className='btn btn-secondary'>Teste</Link>
 
         {/* Ícones das Redes Sociais */}
         <div>
@@ -46,7 +44,6 @@ function App() {
       {/* Gerenciador de rotas*/}
       <main className='flex-grow-1 '>
         <Routes>
-          <Route exack path='/Teste' element={<Teste />} />
           <Route exact path="/Home" element={<Home />} />
           <Route exact path="/Orcamento" element={<Orcamento />} />
         </Routes>
