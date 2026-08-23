@@ -1,0 +1,126 @@
+/* Importações */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+/* Iporta o Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+/* Variáveis */
+:root {
+    /* Fontes dos textos*/
+    --font-h: "Audiowide", sans-serif;
+    --font-p: "Orbitron", sans-serif;
+    --font-nav: "Space Grotesk", sans-serif;
+    
+    /* Cores dos Textos Principais*/
+    --color-h: #d3d3ff;
+    --color-p: #8182b4;
+    --color-p-hover: #d2d2e4;
+
+    /* Cores backgrounds */
+    --color-bg: #04041a;
+    --color-bg-2: #101027;
+    --color-container-1: #101027;
+    --color-container-hover: #191941;
+    --color-container-active: #4040b6;
+}
+
+/*================================
+    Base da Página
+==================================*/
+
+/* Reset global */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Força o navegador a suavizar qualquer rolagem */
+}
+
+html::-webkit-scrollbar {
+  display: none;           /* Esconde a barra no Chrome, Safari e Edge */
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+main {
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+}
+
+/*=======================================
+  Seção 1 Menu de navegação da Página
+=========================================*/
+
+/* Estiliza menu de navegação */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--color-bg-2);
+}
+
+/* Nome da Loja que fica no menu de mavegação */
+.nomeLoja {
+  font-family: var(--font-h);
+  color: var(--color-p);
+  margin-right: auto;
+  padding: 10px;
+}
+
+/* Ícones de contatos e redes sociais */
+.icon {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  margin: 5px;
+  transition: 0.3s ease;
+  gap: 10px;
+}
+
+.icon:hover {
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 5px rgba(211, 211, 255, 0.2));
+  transform: scale(1.2);
+}
+
+#home {
+  display: flex;
+  margin: 10px;
+}
+
+/*=======================================
+  Seção 2 Apresentação da Página
+=========================================*/
+
+.logo {
+  max-width: 500px;
+  width: auto;       
+  height: auto;     
+  object-fit: contain; /* Garante que o PNG se ajuste ao espaço sem distorcer */
+  filter: drop-shadow(0 0 10px rgba(129, 130, 180, 0.4)); /* Sombra leve com a cor do seu parágrafo */
+}
+
+/* Estiliza o elemento "p"*/
+.p-principal {
+  font-family: var(--font-p);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: var(--color-p);
+  line-height: 2;
+}
