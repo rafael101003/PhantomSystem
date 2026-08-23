@@ -31,7 +31,7 @@ function App() {
         {/* Ícones das Redes Sociais */}
         <div>
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/seitech_cpu?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw=="
             target='_blank'
             rel='notrefferer'
             className="d-flex align-items-center text-decoration-none"
