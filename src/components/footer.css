@@ -1,9 +1,0 @@
-.footer-container {
-  background-color: var(--color-bg-2, #101027);
-  color: var(--color-p, #8182b4);
-  font-family: var(--font-p, sans-serif);
-  padding: 20px 10px;
-  text-align: start;
-  border-top: 1px solid rgba(129, 130, 180, 0.2);
-  width: 100%;
-}

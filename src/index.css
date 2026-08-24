@@ -108,7 +108,7 @@ nav {
 =========================================*/
 
 .logo {
-  max-width: 500px;
+  max-width: 350px;
   width: auto;       
   height: auto;     
   object-fit: contain; /* Garante que o PNG se ajuste ao espaço sem distorcer */
@@ -123,4 +123,120 @@ nav {
   font-size: 1.2rem;
   color: var(--color-p);
   line-height: 2;
+  max-width: 100%;
+}
+
+/*===============================================
+  Estilização do footer
+================================================*/
+.footer-container {
+  background-color: var(--color-bg-2, #101027);
+  color: var(--color-p, #8182b4);
+  font-family: var(--font-p, sans-serif);
+  padding: 20px 10px;
+  text-align: start;
+  border-top: 1px solid rgba(129, 130, 180, 0.2);
+  width: 100%;
+}
+
+/*===============================================
+  Estilização da lista de orçamento
+================================================*/
+#list-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    background-color: var(--color-container-1);
+    width: 100%;
+    min-width: 300px;
+    padding: 15px 20px;
+    margin-bottom: 8px;
+    border-radius: 8px !important;
+    color: var(--color-p);
+    font-family: var(--font-nav);
+    transition: all 0.2s ease-in-out;
+}
+
+#list-items:hover {
+    background-color: var(--color-container-hover);
+    color: var(--color-p-hover);
+}
+
+/* Estado ativo quando selecionado */
+#list-items.active {
+    background-color: var(--color-container-hover);
+    border-left: 4px solid #8182b4;
+    width: 350px;
+    min-width: 300px;
+    color: var(--color-p-hover) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(129, 130, 180, 0.2);
+}
+
+/* Card do Total */
+#totalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    border-radius: 15px;
+    min-width: 250px;
+    max-width: 300px;
+    background-color: var(--color-bg-2);
+    font-family: var(--font-h);
+    color: var(--color-h);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+ 
+}
+
+.total-label {
+    font-size: 0.9rem;
+    color: var(--color-p);
+    margin-bottom: 10px;
+    font-family: var(--font-p);
+}
+
+#totalServico {
+    margin: 0;
+    color: #a5a6e0;
+}
+
+/*===============================================
+  Estiliza página orçamento
+================================================*/
+.principal{
+    display: flex;
+    background-color: var(--color-bg);
+    width: 100vh;
+}
+
+/*===============================================
+   Media Queries para Telas Maiores (Desktop / Tablet)
+================================================*/
+@media (min-width: 768px) {
+  .principal {
+    flex-direction: row; /* Coloca a lista ao lado do card de total em computadores */
+    align-items: flex-start;
+    padding: 2rem;
+  }
+
+  .p-principal {
+    font-size: 1.2rem;
+  }
+
+  .nomeLoja {
+    font-size: 1.5rem;
+  }
+
+  .footer-container {
+    text-align: start;
+  }
+
+  #totalContainer {
+    position: sticky;
+    top: 20px; /* Mantém o card do resumo fixo na rolagem do desktop */
+    max-width: 320px;
+  }
 }
