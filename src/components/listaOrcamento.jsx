@@ -1,8 +1,15 @@
+// 1. React / Hooks
 import { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./listaOrcamento.css";
-import BotaoWhatsApp from "./BotaoWhatsapp";
+
+// 2. Dependências de UI / Componentes de Bibliotecas
 import { Container } from "react-bootstrap";
+
+// 3. Estilos (Bootstrap primeiro, CSS da aplicação depois)
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../index.css";
+
+// 4. Componentes Locais
+import BotaoWhatsApp from "./BotaoWhatsapp";
 
 // Tabela oficial de serviços
 const SERVICOS = [
@@ -32,17 +39,16 @@ function ListaOrcamento() {
       
       {/* Coluna 1: Lista de Serviços */}
       <div className="col-12 col-md-7">
-        <ul className="list-group shadow-sm">
+        <ul className="list-group shadow-sm bg">
           {SERVICOS.map(service => {
             const isSelecionado = selecionado.includes(service.id);
             return (
               <li 
                 key={service.id}
                 onClick={() => handleTroca(service.id)}
-                className={`list-group-item d-flex justify-content-between align-items-center ${
-                  isSelecionado ? 'active fw-bold' : ''
-                }`}
+                className={`list-group-item d-flex justify-content-between align-items-center ${isSelecionado ? 'active fw-bold' : ''}`}
                 style={{ cursor: 'pointer' }}
+                id="list-items"
               >
                 <span>{service.title}</span>
                 <Container tituo="valores dos serviços" className="text-white d-flex justify-content-end p-2 w-50">

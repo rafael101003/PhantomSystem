@@ -1,6 +1,6 @@
 import ListaOrcamento from "../components/listaOrcamento"
 import Container from "../containments/container";
-import "./Orcamento.css"
+import "../index.css"
 
 
 function Orcamento() {
