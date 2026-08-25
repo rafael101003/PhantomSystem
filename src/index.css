@@ -149,12 +149,13 @@ nav {
     border: none;
     background-color: var(--color-container-1);
     width: 100%;
-    min-width: 300px;
+    min-width: 250px;
     padding: 15px 20px;
     margin-bottom: 8px;
     border-radius: 8px !important;
     color: var(--color-p);
     font-family: var(--font-nav);
+    font-size: small;
     transition: all 0.2s ease-in-out;
 }
 
@@ -167,8 +168,6 @@ nav {
 #list-items.active {
     background-color: var(--color-container-hover);
     border-left: 4px solid #8182b4;
-    width: 350px;
-    min-width: 300px;
     color: var(--color-p-hover) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(129, 130, 180, 0.2);
@@ -184,23 +183,11 @@ nav {
     border-radius: 15px;
     min-width: 250px;
     max-width: 300px;
+    height: auto;
     background-color: var(--color-bg-2);
     font-family: var(--font-h);
     color: var(--color-h);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
- 
-}
-
-.total-label {
-    font-size: 0.9rem;
-    color: var(--color-p);
-    margin-bottom: 10px;
-    font-family: var(--font-p);
-}
-
-#totalServico {
-    margin: 0;
-    color: #a5a6e0;
 }
 
 /*===============================================
@@ -213,14 +200,35 @@ nav {
 }
 
 /*===============================================
-   Media Queries para Telas Maiores (Desktop / Tablet)
+  Estiliza Componente Container
 ================================================*/
-@media (min-width: 768px) {
-  .principal {
-    flex-direction: row; /* Coloca a lista ao lado do card de total em computadores */
-    align-items: flex-start;
-    padding: 2rem;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 15px;
+  color: var(--color-p);
+  background-color: var(--color-bg-2);
+  border-radius: 15px;
+}
+
+.card-title {
+  color: var(--color-h);
+  font-family: var(--font-h);
+  font-size: 1.5rem;
+}
+
+.card-body {
+  color: var(--color-p);
+  font-family: var(--font-p);
+  font-size: 1.5rem;
+}
+
+/*=====================================================
+   Media Queries para Telas Maiores (Desktop / Tablet)
+======================================================*/
+@media (max-width: 768px) {
 
   .p-principal {
     font-size: 1.2rem;
@@ -228,6 +236,55 @@ nav {
 
   .nomeLoja {
     font-size: 1.5rem;
+  }
+
+  .p-principal {
+    font-family: var(--font-p);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: var(--color-p);
+    line-height: 2;
+    max-width: 100%;
+  }
+
+
+  #list-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    background-color: var(--color-container-1);
+    width: 100%;
+    min-width: 250px;
+    height: 3rem;
+    padding: 15px 20px;
+    margin-bottom: 8px;
+    border-radius: 8px !important;
+    color: var(--color-p);
+    font-family: var(--font-nav);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    color: var(--color-p);
+    background-color: var(--color-bg-2);
+    border-radius: 15px;
+  }
+
+  .card-title {
+    color: var(--color-h);
+    font-family: var(--font-h);
+    font-size: 0.9rem;
+  }
+
+  .card-body {
+    color: var(--color-p);
+    font-family: var(--font-p);
+    font-size: 0.9rem;
   }
 
   .footer-container {

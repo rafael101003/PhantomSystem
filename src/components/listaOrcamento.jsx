@@ -1,9 +1,6 @@
 // 1. React / Hooks
 import { useState } from "react";
 
-// 2. Dependências de UI / Componentes de Bibliotecas
-import { Container } from "react-bootstrap";
-
 // 3. Estilos (Bootstrap primeiro, CSS da aplicação depois)
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../index.css";
@@ -35,7 +32,7 @@ function ListaOrcamento() {
   const total = objetosSelecionados.reduce((soma, servico) => soma + servico.price, 0);
 
   return (
-    <div className="row justify-content-center align-items-start g-4 mt-2">
+    <div className="d-flex flex-column gap-2 justify-content-center align-items-start mt-4">
       
       {/* Coluna 1: Lista de Serviços */}
       <div className="col-12 col-md-7">
@@ -51,10 +48,7 @@ function ListaOrcamento() {
                 id="list-items"
               >
                 <span>{service.title}</span>
-                <Container tituo="valores dos serviços" className="text-white d-flex justify-content-end p-2 w-50">
-                    R$ {service.price.toFixed(2)}
-                </Container>
-
+                <span className="text-white fw-bolder">R$ {service.price.toFixed(2)}</span>
               </li>
             );
           })}
