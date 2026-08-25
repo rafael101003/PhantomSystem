@@ -1,13 +1,13 @@
-import "./container.css"
+import "../index.css"
 
 function Container({children, titulo}) {
   return(
-    <div className="container d-flex flex-column mb-4 mt-4 w-auto p-3">
+    <div className="container mt-4 mb-4">
       
       {/* Exemplo: Se passar a prop 'titulo', renderiza um cabeçalho fixo */}
       {titulo && (<h3 className="card-title text-center">{titulo}</h3>)}
 
-      <div className="d-flex flex-column gap-3 text-center card-body p-2 ">
+      <div className="d-flex flex-column gap-3 text-center card-body ">
         {children}
       </div>
 
