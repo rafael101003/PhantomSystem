@@ -32,11 +32,11 @@ function ListaOrcamento() {
   const total = objetosSelecionados.reduce((soma, servico) => soma + servico.price, 0);
 
   return (
-    <div className="d-flex flex-column gap-2 justify-content-center align-items-start mt-4">
+    <div className="gap-3 justify-content-center align-items-start ">
       
       {/* Coluna 1: Lista de Serviços */}
       <div className="col-12 col-md-7">
-        <ul className="list-group shadow-sm bg">
+        <ul className="list-group shadow-sm bg mt-4 mb-2">
           {SERVICOS.map(service => {
             const isSelecionado = selecionado.includes(service.id);
             return (
