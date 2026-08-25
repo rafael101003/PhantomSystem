@@ -150,6 +150,7 @@ nav {
     background-color: var(--color-container-1);
     width: 100%;
     min-width: 250px;
+    max-width: 500px;
     padding: 15px 20px;
     margin-bottom: 8px;
     border-radius: 8px !important;
@@ -182,7 +183,7 @@ nav {
     padding: 25px;
     border-radius: 15px;
     min-width: 250px;
-    max-width: 300px;
+    max-width: 500px;
     height: auto;
     background-color: var(--color-bg-2);
     font-family: var(--font-h);
@@ -248,10 +249,8 @@ nav {
     max-width: 100%;
   }
 
-
   #list-items {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     border: none;
     background-color: var(--color-container-1);
@@ -259,7 +258,7 @@ nav {
     min-width: 250px;
     height: 3rem;
     padding: 15px 20px;
-    margin-bottom: 8px;
+    gap: 20px;
     border-radius: 8px !important;
     color: var(--color-p);
     font-family: var(--font-nav);
