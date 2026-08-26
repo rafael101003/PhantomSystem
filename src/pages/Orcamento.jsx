@@ -1,17 +1,16 @@
+import { useState } from "react";
 import ListaOrcamento from "../components/listaOrcamento"
-import Container from "../containments/container.jsx";
 import Input from "../containments/input.jsx";
 import "../index.css"
 
 
 function Orcamento() {
+    const [nomeCliente, setNomeCliente] = useState('');
+
     return(
         <div className="principal row col-10 col-lg-8">
-            <ListaOrcamento />
-            <Container titulo={"Bem vindo a página de orçamentos"}>
-                <p>Ao selecionar os itens da lista clique em 'enviar' para entrar em contato conosco!</p>
-            </Container>
-            <Input />
+            <Input onSalvarNome={setNomeCliente} nomeAtual={nomeCliente} />
+            <ListaOrcamento  nomeCliente={nomeCliente} />
         </div>
     );
 }
