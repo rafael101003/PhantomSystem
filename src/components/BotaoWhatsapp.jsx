@@ -2,8 +2,14 @@ const ddd = "14";
 const parte1 = "99889";
 const parte2 = "2226";
 
-function BotaoWhatsApp({ selecionados = [], total = 0 }) {
+function BotaoWhatsApp({ selecionados = [], total = 0, nomeCliente = ''}) {
   const enviarWhatsApp = () => {
+
+    if(!nomeCliente || nomeCliente.trim() === ''){
+      alert(`Por favor digite um nome e clique em 'enviar' para confirmar`);
+      return;
+    }
+
     if (selecionados.length === 0) {
       alert("Por favor, selecione ao menos um serviço para continuar.");
       return;
@@ -15,6 +21,7 @@ function BotaoWhatsApp({ selecionados = [], total = 0 }) {
 
     const mensagem = 
       `*Solicitação de Orçamento - Phantom System*\n\n` +
+      `*Cliente: ${nomeCliente}*\n\n` +
       `*Serviços selecionados:*\n${lista}\n\n` +
       `*Total estimado:* R$ ${total.toFixed(2)}`;
 

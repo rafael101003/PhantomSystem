@@ -17,7 +17,7 @@ const SERVICOS = [
   { id: 5, title: 'Recuperação de arquivos', price: 120 },
 ];
 
-function ListaOrcamento() {
+function ListaOrcamento({nomeCliente}) {
   const [selecionado, setSelecionado] = useState([]);
 
   // Alterna a seleção do serviço
@@ -32,11 +32,11 @@ function ListaOrcamento() {
   const total = objetosSelecionados.reduce((soma, servico) => soma + servico.price, 0);
 
   return (
-    <div className="gap-3 justify-content-center align-items-start ">
+    <div className="gap-3 justify-content-center align-items-start mb-4">
       
       {/* Coluna 1: Lista de Serviços */}
       <div className="col-12 col-md-7">
-        <ul className="list-group shadow-sm bg mt-4 mb-2">
+        <ul className="list-group shadow-sm bg mb-2">
           {SERVICOS.map(service => {
             const isSelecionado = selecionado.includes(service.id);
             return (
@@ -65,7 +65,8 @@ function ListaOrcamento() {
           
           <BotaoWhatsApp 
             selecionados={objetosSelecionados} 
-            total={total} 
+            total={total}
+            nomeCliente={nomeCliente}
           />
         </div>
       </div>
