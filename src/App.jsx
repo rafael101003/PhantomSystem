@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Páginas
 import Home from './pages/Home.jsx';
 import Orcamento from './pages/Orcamento.jsx';
+import Administrador from './pages/administrador.jsx';
 
 // Componentes
 import Footer from './components/footer.jsx';
@@ -44,10 +45,11 @@ function App() {
       {/* Gerenciador de rotas*/}
       <main className='flex-grow-1 '>
         <Routes>
+          <Route path='/Administrador' element={<Administrador/>}/>
           <Route path="/" element={<Navigate to="/Home" replace />} />
           <Route exact path="/Home" element={<Home />} />
           <Route exact path="/Orcamento" element={<Orcamento />} />
-           <Route path="*" element={<Navigate to="/Home" replace />} />
+          <Route path="*" element={<Navigate to="/Home" replace />} />
         </Routes>
       </main>
       <Footer />
