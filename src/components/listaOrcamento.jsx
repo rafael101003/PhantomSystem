@@ -17,7 +17,7 @@ const SERVICOS = [
   { id: 5, title: 'Recuperação de arquivos', price: 120 },
 ];
 
-function ListaOrcamento({nomeCliente}) {
+function ListaOrcamento({ nomeCliente }) {
   const [selecionado, setSelecionado] = useState([]);
 
   // Alterna a seleção do serviço
@@ -32,11 +32,10 @@ function ListaOrcamento({nomeCliente}) {
   const total = objetosSelecionados.reduce((soma, servico) => soma + servico.price, 0);
 
   return (
-    <div className="gap-3 justify-content-center align-items-start mb-4">
+    <div className="row g-3 w-100 mx-auto justify-content-center my-3">
       
-      {/* Coluna 1: Lista de Serviços */}
       <div className="col-12 col-md-7">
-        <ul className="list-group shadow-sm bg mb-2">
+        <ul className="list-group">
           {SERVICOS.map(service => {
             const isSelecionado = selecionado.includes(service.id);
             return (
@@ -48,16 +47,15 @@ function ListaOrcamento({nomeCliente}) {
                 id="list-items"
               >
                 <span>{service.title}</span>
-                <span className="text-white fw-bolder">R$ {service.price.toFixed(2)}</span>
+                <span className="total-item-lista text-white text-end">R$ {service.price.toFixed(2)}</span>
               </li>
             );
           })}
         </ul>
       </div>
 
-      {/* Coluna 2: Card de Resumo */}
-      <div className="col-12 col-md-5">
-        <div id="totalContainer" className="card p-4 shadow-sm">
+      <div className="col-12 col-md-5 mb-4">
+        <div id="totalContainer" className="card p-4">
           <h4 className="card-title text-center mb-3">Resumo do Orçamento</h4>
           <h3 className="text-center text-success fw-bold mb-4">
             Total: R$ {total.toFixed(2)}
