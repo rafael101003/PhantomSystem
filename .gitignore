@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 *.svg
 *vite.config.js
+.env
