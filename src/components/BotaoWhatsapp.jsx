@@ -1,12 +1,18 @@
+import { useState } from "react";
+
 const ddd = "14";
 const parte1 = "99889";
 const parte2 = "2226";
 
-function BotaoWhatsApp({ selecionados = [], total = 0, nomeCliente = ''}) {
+function BotaoWhatsApp({ selecionados = [], total = 0, nomeCliente = '' }) {
+  const [mensagemErro, setMensagemErro] = useState('');
+
   const enviarWhatsApp = () => {
 
-    if(!nomeCliente || nomeCliente.trim() === ''){
-      alert(`Por favor digite um nome e clique em 'enviar' para confirmar`);
+    console.log("Dados enviados do React -> Nome:", nomeCliente, "Total:", total);
+
+    if (!nomeCliente || nomeCliente.trim() === '') {
+      alert("Por favor digite um nome e clique em 'enviar' para confirmar");
       return;
     }
 
@@ -14,6 +20,33 @@ function BotaoWhatsApp({ selecionados = [], total = 0, nomeCliente = ''}) {
       alert("Por favor, selecione ao menos um serviço para continuar.");
       return;
     }
+
+    fetch('http://localhost:3000/api/orcamento', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        nome: nomeCliente,
+        total: Number(total)
+      }) 
+    })
+      .then((resposta) => {
+        if (!resposta.ok) {
+          return resposta.json().then((dadosDoErro) => {
+            throw new Error(dadosDoErro.erro || 'Erro ao cadastrar orçamento');
+          });
+        } 
+        return resposta.json();
+      })
+      .then((dadosSalvos) => {
+        console.log('Orçamento cadastrado com sucesso no Supabase!', dadosSalvos);
+        setMensagemErro('');
+      })
+      .catch((erro) => {
+        console.error('Houve problema ao enviar orçamento:', erro);
+        setMensagemErro(erro.message);
+      });
 
     const lista = selecionados
       .map(item => `• *${item.title}*: R$ ${item.price.toFixed(2)}`)
@@ -30,12 +63,15 @@ function BotaoWhatsApp({ selecionados = [], total = 0, nomeCliente = ''}) {
   };
 
   return (
-    <button 
-      onClick={enviarWhatsApp}
-      className="btn btn-success btn-lg w-100 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2"
-    >
-      <span>Enviar para o WhatsApp</span>
-    </button>
+    <div>
+      {mensagemErro && <div className="alert alert-danger py-2 small text-center">{mensagemErro}</div>}
+      <button 
+        onClick={enviarWhatsApp}
+        className="btn btn-success btn-lg w-100 fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2"
+      >
+        <span>Enviar para o WhatsApp</span>
+      </button>
+    </div>
   );
 }
 
