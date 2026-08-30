@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config'
 import { createClient } from '@supabase/supabase-js';
-import { body } from 'motion/react-client';
 
 const app = express();
 const PORT = process.env.PORT || 3000; // Porta do servidor local
@@ -37,30 +36,46 @@ app.get('/api/data', async (req, res) => {
 });
 
 // Ao fazer o orçamento, guarda nome do cliente e total do orçamento
-app.post('/api/orcamento', async (req,res) => {
-    try{
-        const{cliente_nome} = req.body
+app.post('/api/orcamento', async (req, res) => {
+    try {
+         console.log("Corpo recebido no Node:", req.body);
 
-        if(!cliente_nome){res.status(400).json({erro: 'Inserir o nome é obrigatório'});}
+        const {nome, total} = req.body;
 
-        const{data, error} = await supabase
-        .from('cliente')
-        .insert([{cliente_nome: cliente_nome}])
-        .select();
+        if (!nome) {
+            console.log("Bloqueado: Nome não enviado!");
 
-        if(error) return res.status(400).json({erro: error.message});
-;
-        res.status(201).json({
+            return res.status(400).json({ erro: 'Inserir o nome é obrigatório' });
+        }
+
+        console.log(`Enviando ao Supabase -> Nome: ${nome} | Total: ${total}`);
+
+        const { data, error } = await supabase
+            .from('cliente')
+            .insert([{ 
+                    cliente_nome: nome,
+                    total: total
+                    }])
+            .select();
+
+        if (error) {
+            return res.status(400).json({ erro: error.message });
+        }
+
+        return res.status(201).json({
             mensagem: 'Cliente cadastrado com sucesso!',
             dados: data
         });
-    }
-    
-    catch(err){
-        console.log(err);
-        res.status(500).json({erro: 'erro interno ao se comunicar com o servidor'});
+
+    } catch (erroInesperado) {
+        console.error('Erro interno:', erroInesperado);
+
+        if (!res.headersSent) {
+            return res.status(500).json({ erro: 'Erro interno no servidor.' });
+        }
     }
 });
+
 
 app.listen(PORT, () => {
     console.log(`servidor rodando na porta-> ${PORT}`);
