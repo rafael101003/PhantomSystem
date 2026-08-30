@@ -21,7 +21,7 @@ function BotaoWhatsApp({ selecionados = [], total = 0, nomeCliente = '' }) {
       return;
     }
 
-    fetch('http://localhost:3000/api/orcamento', {
+    fetch('/api/orcamento', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

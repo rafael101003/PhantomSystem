@@ -4,7 +4,7 @@ import 'dotenv/config'
 import { createClient } from '@supabase/supabase-js';
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Porta do servidor local
+//const PORT = process.env.PORT || 3000; // Porta do servidor local
 
 // Importa supabase para a API
 const supabase = createClient(
@@ -77,6 +77,4 @@ app.post('/api/orcamento', async (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-    console.log(`servidor rodando na porta-> ${PORT}`);
-});
+export default app;
