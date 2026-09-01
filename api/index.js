@@ -1,7 +1,9 @@
 import express from 'express';
 import cors from 'cors';
-import 'dotenv/config'
+import dotenv from 'dotenv';
 import { createClient } from '@supabase/supabase-js';
+
+dotenv.config();
 
 const app = express();
 //const PORT = process.env.PORT || 3000; // Porta do servidor local
@@ -40,7 +42,7 @@ app.post('/api/orcamento', async (req, res) => {
     try {
          console.log("Corpo recebido no Node:", req.body);
 
-        const {nome, total} = req.body;
+        const {nome, total, servicos} = req.body;
 
         if (!nome) {
             console.log("Bloqueado: Nome não enviado!");
@@ -54,7 +56,8 @@ app.post('/api/orcamento', async (req, res) => {
             .from('cliente')
             .insert([{ 
                     cliente_nome: nome,
-                    total: total
+                    total: total,
+                    servicos: servicos
                     }])
             .select();
 
@@ -76,5 +79,8 @@ app.post('/api/orcamento', async (req, res) => {
     }
 });
 
+//app.listen(PORT, () => {
+//    console.log(`Servidor iniciado com sucesso na porta ${PORT}`);
+//})
 
 export default app;

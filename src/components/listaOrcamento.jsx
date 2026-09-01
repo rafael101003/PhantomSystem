@@ -31,6 +31,11 @@ function ListaOrcamento({ nomeCliente }) {
   const objetosSelecionados = SERVICOS.filter(servico => selecionado.includes(servico.id));
   const total = objetosSelecionados.reduce((soma, servico) => soma + servico.price, 0);
 
+  // Pega apenas o titulo dos serviços para passar para o banco de dados
+  const titleSelecionados = SERVICOS
+  .filter(servico => selecionado.includes(servico.id))
+  .map(servico => servico.title);
+
   return (
     <div className="row g-3 w-100 mx-auto justify-content-center my-3">
       
@@ -62,7 +67,8 @@ function ListaOrcamento({ nomeCliente }) {
           </h3>
           
           <BotaoWhatsApp 
-            selecionados={objetosSelecionados} 
+            titleSelecionados = {titleSelecionados}
+            selecionados={objetosSelecionados}
             total={total}
             nomeCliente={nomeCliente}
           />

@@ -4,7 +4,7 @@ const ddd = "14";
 const parte1 = "99889";
 const parte2 = "2226";
 
-function BotaoWhatsApp({ selecionados = [], total = 0, nomeCliente = '' }) {
+function BotaoWhatsApp({ titleSelecionados = [], selecionados = [], total = 0, nomeCliente = '' }) {
   const [mensagemErro, setMensagemErro] = useState('');
 
   const enviarWhatsApp = () => {
@@ -21,14 +21,16 @@ function BotaoWhatsApp({ selecionados = [], total = 0, nomeCliente = '' }) {
       return;
     }
 
-    fetch('/api/orcamento', {
+    fetch('http://localhost:3000/api/orcamento', {
+    //fetch('/api/orcamento', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
       },
       body: JSON.stringify({ 
         nome: nomeCliente,
-        total: Number(total)
+        total: Number(total),
+        servicos: titleSelecionados
       }) 
     })
       .then((resposta) => {
